@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 
  const OptionSchema = mongoose.Schema({
@@ -15,24 +16,34 @@ const TestSchema = mongoose.Schema({
     }
 
 });
-
+/*
 const CandidateSchema = mongoose.Schema({
-  name : {
+  first_name : {
     type : String,
-    maxlength : 24
+    maxlength : 24,
+    required : true
+  },
+  last_name : {
+    type : String,
+    maxlength : 24,
+    required : true
   },
   email : {
     type : String,
-    maxlength :24
+    maxlength :24,
+    required : true,
   },
   number:{
     type : Number,
     maxlength : 10
   },
-  marks:Number,
-})
+  marks:{
+    type : Number,
+    default : 0
+  }
+});
 
-
+*/
 module.exports = mongoose.model('Options',OptionSchema);
 module.exports = mongoose.model('Test',TestSchema);
-module.exports = mongoose.model('Candidate',CandidateSchema);
+//module.exports = mongoose.model('Candidate',CandidateSchema);
