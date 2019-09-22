@@ -2,10 +2,17 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Candidate = require('./models/candidate');
 const bodyParser = require('body-parser');
+var cors = require('cors')
 const app = express();
 const startRoute=require('./routes/start');
+const questRoute=require('./routes/question');
+//Middlewere
+app.use(cors());
 app.use('/start',startRoute);
 app.use(bodyParser.json());
+app.use('/question',questRoute);
+
+//DataBase Connection
 mongoose.connect('mongodb://127.0.0.1/exam', {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -17,39 +24,29 @@ mongoose.connect('mongodb://127.0.0.1/exam', {
 
 //Routes HERE
 
-app.get('/',(req,res)=>{
-  res.send('<h1>Login Here</h1>');
+app.get('/', async (req,res)=>{
+  try{
+    res.send('<h1>Login Here</h1>');
+    //const candidates = await Candidate.find();
+  //  res.send(candidates);
+  } catch(err){
+    res.json({message : err});
+  }
 });
 
 
-app.post('/',(req,res)=>{
+app.post('/', async (req,res)=>{
   const newCandidate=new Candidate({
     first_name : req.body.first_name,
     last_name : req.body.last_name,
     email : req.body.email,
     number : req.body.number
   });
-  newCandidate.save();
-  //console.log(req.body);
-  /*let {
-    first_name,
-    last_name,
-    email,
-    number
-  } =req.body
-  // NO Check
-  let newCandidate = new Candidate({
-    //first_name,
-    last_name,
-    email,
-    number
-  });
-  newCandidate.save().then(user=>{
-    return res.status(201).json({
-      sucess : true,
-      msg : "Sucessful Login"
-    });
-  });
-  */
+  try{
+    const new_candidate= await newCandidate.save();
+    res.json(new_candidate);
+  } catch(err){
+    res.json({message : err});
+  }
 });
-app.listen(8080);
+app.listen(8081);
