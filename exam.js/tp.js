@@ -12,10 +12,7 @@ const TestSchema = mongoose.Schema({
     require:false
   },
   choices : {
-      type:  [new mongoose.Schema({
-        option: String,
-        iscorrect: Boolean, default : false
-      })]
+      type:  [new Schema({ option: 'string' })]
     }
 
 });

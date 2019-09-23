@@ -1,4 +1,3 @@
-/*
 const mongoose = require('mongoose');
 
 const OptionSchema = mongoose.Schema({
@@ -8,4 +7,3 @@ const OptionSchema = mongoose.Schema({
 });
 
 module.exports = mongoose.model('Options',OptionSchema);
-*/
