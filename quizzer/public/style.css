@@ -6,8 +6,17 @@ div.container.grid-list-md.text-xs-center
 {
     margin-top: 40%;
 }
-.row{
-    border: thick;
-    border-style: solid;
-    border-color: dimgrey;
+
+#inst{
+    margin-top: 3%;
+}
+
+#btn
+{
+    margin: 15%
+}
+
+.style{
+    margin: 5%;
+    margin-left: 40%;
 }

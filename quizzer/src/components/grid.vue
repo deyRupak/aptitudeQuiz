@@ -30,9 +30,16 @@
           </v-card>
         </v-flex>
       </v-layout>
+      <div id="btn" class="d-flex justify-content-center align-items-center">
+        <router-link to="/final">
+        <v-btn color="primary" >Submit</v-btn>
+        </router-link>
+        </div>
     </v-container>
   </v-app>
+  
 </div>
+
 
 </template>
 
