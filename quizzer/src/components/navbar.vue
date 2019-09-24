@@ -7,8 +7,11 @@
                     <v-spacer></v-spacer>
                     <v-spacer></v-spacer>
                   <v-toolbar-items>
-                    <v-btn text color="#eee">Admin</v-btn>
-                    <v-btn text color="#eee">Logout</v-btn>
+                    <div class="navicon">
+                      <router-link to="/">
+                      <v-btn color="primary">logout</v-btn>
+                      </router-link> 
+                    </div>
                   </v-toolbar-items>
                 </v-toolbar>
               </div>

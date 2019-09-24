@@ -58,6 +58,11 @@
       </v-btn>
     </v-card-actions>
   </v-card>
+  <div class="style">
+    <router-link to="/final">
+     <v-btn color="primary">Submit</v-btn>
+    </router-link>
+  </div>
   </div>
 </template>
 

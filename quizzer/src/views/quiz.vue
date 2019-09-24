@@ -1,12 +1,16 @@
 <template>
-<div>
+<div class="quiz">
    <div class="row">
-        <div class="col-sm-8  d-flex justify-content-center align-items-center">
+     <div id="panel" class="col-sm-2 d-flex justify-content-center align-items-center ">
+            <grid />
+        </div>
+        <div  class="col-sm-1">
+        </div>
+        <div class="col-sm-8 ">
             <card />
             <button />
         </div>
-        <div class="col-sm-4 d-flex justify-content-center align-items-center ">
-            <grid />
+        <div id="panel" class="col-sm-1 ">
         </div>
         </div>
         

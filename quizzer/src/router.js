@@ -4,6 +4,7 @@ import home from './views/home.vue'
 import quiz from './views/quiz.vue'
 import inst from './views/inst.vue'
 import final from './views/final.vue'
+import admin from './views/admin.vue'
 
 
 Vue.use(Router)
@@ -31,7 +32,12 @@ export default new Router({
         path: '/final',
         name: 'final',
         component: final
-    }
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: admin
+  }
 
   ]
 })

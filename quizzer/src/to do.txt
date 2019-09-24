@@ -1,3 +1,13 @@
     <v-content class="mx-4 mb-4">
       <router-view></router-view>
     </v-content>
+   <div class="row">
+        <div class="col-sm-8  d-flex justify-content-center align-items-center">
+            <card />
+        </div>
+        <div class="col-sm-4 d-flex justify-content-center align-items-center ">
+            <grid />
+        </div>
+  </div>
+
+  <v-btn color="primary" >Login</v-btn>
