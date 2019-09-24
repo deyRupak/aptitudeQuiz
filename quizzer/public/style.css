@@ -1,0 +1,13 @@
+body{
+ min-width: 1100px;
+}
+
+div.container.grid-list-md.text-xs-center
+{
+    margin-top: 40%;
+}
+.row{
+    border: thick;
+    border-style: solid;
+    border-color: dimgrey;
+}

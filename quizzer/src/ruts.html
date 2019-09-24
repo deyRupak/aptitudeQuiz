@@ -1,0 +1,149 @@
+
+
+	<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vuetify/dist/vuetify.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+<link rel="stylesheet"  href="https://unpkg.com/vuetify/dist/vuetify.min.css">
+<script>https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js</script>
+<script>https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js</script>
+<script>https://cdn.jsdelivr.net/npm/vuetify@2.0.18/dist/vuetify.min.js</script>
+    
+  <body>
+      <div id="apps" >
+          <v-apps id="inspire" color="primary">
+            <div>
+              <v-toolbar style="background:#1976D2;">
+                <v-toolbar-title style="color:#eee;" >Aptitude  Quiz</v-toolbar-title>
+
+          <div class="flex-grow-1"></div>
+                <v-toolbar-items>
+                
+                
+                  
+                    <div class="flex-grow-1"></div>
+
+              
+                  <v-spacer></v-spacer>
+                  <v-btn text color="#eee">link</v-btn>
+                  <v-btn text color="#eee">Logout</v-btn>
+                </v-toolbar-items>
+          
+        
+                  
+                
+              </v-toolbar>
+            </div>
+          </v-apps>
+        </div>
+
+        <script>
+        new Vue({
+  el: '#apps',
+  vuetify: new Vuetify(),
+  
+})
+        
+        
+        </script>
+  
+
+    
+    
+
+
+
+
+
+
+
+      <div id="app">
+          <v-app id="inspiree">
+            <v-content>
+              <v-container 
+              class="fill-height"
+              fluid
+                
+                
+              >
+                <v-layout
+                  align-center
+                  justify-center
+                >
+                  <v-flex
+                    xs12
+                    sm8
+                    md4
+                    
+                  >
+                    <v-card class="elevation-12">
+                      <v-toolbar
+                        color="primary"
+                        dark
+                        flat
+                      >
+                        <v-toolbar-title>Login form</v-toolbar-title>
+                        <v-spacer></v-spacer>
+                        
+                      </v-toolbar>
+                      <v-card-text >
+                        <v-form>
+                          <v-text-field
+                            label="Username"
+                            name="login"
+                            prepend-icon="person"
+                            type="text"
+                          ></v-text-field>
+        
+                          <v-text-field
+                            id="Contact No."
+                            label="Contact No."
+                            name="Contact No."
+                            prepend-icon="call"
+                            type="number"
+                          ></v-text-field>
+                          <v-text-field
+                            id="E-mail"
+                            label=" E-mail"
+                            name="E-mail"
+                            prepend-icon="email"
+                            type="e-mail"
+                          ></v-text-field>
+                        </v-form>
+                      </v-card-text>
+                      <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn color="primary">Login</v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-content>
+          </v-app>
+        </div>
+    
+    </body>
+    <script>
+
+new Vue({
+  el: '#app',
+  vuetify: new Vuetify(),
+  data: () => ({
+    drawer: null
+  })
+})
+
+
+    </script>
+    
+  
+  
