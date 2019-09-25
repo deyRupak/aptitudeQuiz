@@ -1,13 +1,10 @@
-    <v-content class="mx-4 mb-4">
-      <router-view></router-view>
-    </v-content>
-   <div class="row">
-        <div class="col-sm-8  d-flex justify-content-center align-items-center">
-            <card />
-        </div>
-        <div class="col-sm-4 d-flex justify-content-center align-items-center ">
-            <grid />
-        </div>
-  </div>
+<v-expansion-panels >
+      <v-expansion-panel
+        v-for="(item,i) in 20"
+        :key="i"
+      >
+        
 
-  <v-btn color="primary" >Login</v-btn>
+        <v-expansion-panel-header>Question</v-expansion-panel-header>
+      </v-expansion-panel>
+    </v-expansion-panels>
