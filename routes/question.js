@@ -4,8 +4,13 @@ const Question = require('../models/test');
 const multer = require('multer')
 const upload = multer({dest: 'uploads/'})
 
-router.get('/',(req,res)=>{
-  res.send('Question Adds Here');
+router.get('/',async (req,res)=>{
+  try{
+    const questions = await Question.find();
+    res.json(questions);
+  }catch(err){
+    res.json({message: err});
+  }
 });
 router.post('/',upload.single('quesionImage'),async (req,res)=>{
   try{

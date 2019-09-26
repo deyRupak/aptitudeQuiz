@@ -6,11 +6,15 @@ var cors = require('cors')
 const app = express();
 const startRoute=require('./routes/start');
 const questRoute=require('./routes/question');
+const adminRoute=require('./routes/admin');
+
 //Middlewere
 app.use(cors());
 app.use('/start',startRoute);
 app.use(bodyParser.json());
 app.use('/question',questRoute);
+app.use('/admin',adminRoute);
+app.use('/uploads', express.static('uploads'));
 
 //DataBase Connection
 mongoose.connect('mongodb://127.0.0.1/exam', {
@@ -46,6 +50,7 @@ app.post('/', async (req,res)=>{
     const new_candidate= await newCandidate.save();
     res.json(new_candidate);
   } catch(err){
+  	console.log(err);
     res.json({message : err});
   }
 });
