@@ -1,4 +1,4 @@
-npm const express = require('express');
+const express = require('express');
 const mongoose = require('mongoose');
 const Candidate = require('./models/candidate');
 const bodyParser = require('body-parser');
