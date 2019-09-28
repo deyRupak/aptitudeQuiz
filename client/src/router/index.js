@@ -4,7 +4,6 @@ import HelloWorld from '@/components/HelloWorld'
 import ExamHall from '@/components/ExamHall'
 import instruction from '@/components/instruction'
 
-
 Vue.use(Router)
 
 export default new Router({
@@ -24,6 +23,6 @@ export default new Router({
       path: '/',
       name: 'instruction',
       component: instruction
-    },
+    }
   ]
 })

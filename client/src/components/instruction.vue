@@ -11,7 +11,7 @@
             <br><li>After attempting a questions click on 'Save and Next'.</li>
             <br><li>Click on the 'SUBMIT' button only after you're sure with your responses.</li>
         </h6><br>
-    
+
     <router-link to="/signin">
       <button
               class="btn btn-primary" type="submit" >NEXT
@@ -20,7 +20,7 @@
     <br><br><br><br><br>
     <h2>Good Luck!</h2>
     </div>
-         
+
          <div class="col-sm-3"></div>
           <div class="col-sm-3" style="margin-top:20%;">
               <img src="https://www.acpce.org/wp-content/uploads/2017/06/csi-logo.png" alt="" srcset="">

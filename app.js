@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Candidate = require('./models/candidate');
 const Question = require('./models/test');
-//const bodyParser = require('body-parser');
 var cors = require('cors')
 const app = express();
 
@@ -90,24 +89,18 @@ app.post('/result',async (req,res)=>{
 */
 app.post('/result',async (req,res)=>{
   try{
-    var t= req.body;
-    console.log(t.answer);
-    const answer = t.answer;
-    console.log(t.email);
-    const mark=0
+    let email=req.body.email;
+    let answer=req.body.answer;
+    let mark = 0;
+    console.log(email,answer);
     for(var i=0;i<answer.length;i++){
-      if(answer[i].iscorrect){
-        mark = mark +1
-      }
+      mark = mark + 1;
     }
-      console.log(answer[i].iscorrect)
-  }.then().catch() /*
-  const filter = { email: t.email };
-  const update = { marks: mark };
-  let doc = await Candidate.findOneAndUpdate(filter, update, {
-    new: true
-  });
-  await doc.save();*/
+    const current_candidate = await Candidate.findOne({email: email})
+    console.log(current_candidate)
+    current_candidate.marks = mark
+    await current_candidate.save()
+  }catch(err){ console.log(err)}
 }
 );
 
