@@ -1,20 +1,28 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Candidate = require('./models/candidate');
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 var cors = require('cors')
 const app = express();
+
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 const startRoute=require('./routes/start');
 const questRoute=require('./routes/question');
 const adminRoute=require('./routes/admin');
-
+//const resultRoute=require('./routes/result');
 //Middlewere
 app.use(cors());
 app.use('/start',startRoute);
+//app.use('/result',resultRoute);
 app.use(bodyParser.json());
 app.use('/question',questRoute);
 app.use('/admin',adminRoute);
 app.use('/uploads', express.static('uploads'));
+
+
 
 //DataBase Connection
 mongoose.connect('mongodb://127.0.0.1/exam', {
@@ -54,4 +62,10 @@ app.post('/', async (req,res)=>{
     res.json({message : err});
   }
 });
+
+app.post('/result',async (req,res)=>{
+  var t= req.body;
+  console.log(t.answer);
+});
+
 app.listen(8081);
