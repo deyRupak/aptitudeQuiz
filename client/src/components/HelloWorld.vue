@@ -1,35 +1,34 @@
 <template>
   <div id="HelloWorld">
-  <div class="container">
+  <div class="container" id="cont">
   <form @submit.prevent="onSubmit">
       <div class="row" >
-        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <div class="col-sm-6">
         <div class="form-group">
-          <h3> Login Here </h3>
+          <h3> LOGIN </h3>
         </div>
           <div class="form-group">
             <label for="email"> Email </label>
-            <input type="text" id="email" class="form-control" v-model="email">
+            <input type="email" id="email" class="form-control" v-model="email" required>
           </div>
           <div class="form-group">
-            <label for="First_Name"> Frist Name </label>
-            <input type="text" id="First_Name" class="form-control" v-model="first_name">
+            <label for="First_Name"> First Name </label>
+            <input type="text" id="First_Name" class="form-control" v-model="first_name" required>
           </div>
           <div class="form-group">
             <label for="Last_Name"> Last Name </label>
-            <input type="text" id="Last_Name" class="form-control" v-model="last_name">
+            <input type="text" id="Last_Name" class="form-control" v-model="last_name" required>
           </div>
           <div class="form-group">
-            <label for="Number"> Number </label>
-            <input type="text" id="Number" class="form-control" v-model="number">
-          </div>
+            <label for="Number"> Contact </label>
+            <input type="text" id="Number" class="form-control" v-model="number" required>
+          </div><br>
           <div class="form-group">
           <button
-              class="btn btn-primary" type="submit" >Submit
+              class="btn btn-primary" type="submit" >Login
           </button>
           </div>
         </div>
-        <p> {{email}} </p>
       </div>
     </form>
   </div>
@@ -57,7 +56,13 @@ export default {
         number: this.number
       }
       console.log(formData)
-      axios.post('http://localhost:8081/', formData)
+      axios.post('http://172.16.4.13:8081/', formData).then((response) => {
+        console.log(response.message)
+
+        this.$router.push('/exam/' + this.email)
+      }).catch((error) => {
+        console.log(error)
+      })
     }
   }
 }
@@ -65,6 +70,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#cont {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 h1, h2 {
   font-weight: normal;
 }
