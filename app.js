@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Candidate = require('./models/candidate');
+const Question = require('./models/test');
 //const bodyParser = require('body-parser');
 var cors = require('cors')
 const app = express();
@@ -63,9 +64,51 @@ app.post('/', async (req,res)=>{
   }
 });
 
+/*
 app.post('/result',async (req,res)=>{
   var t= req.body;
   console.log(t.answer);
-});
+  console.log(t.email);
+  const answer = t.answer;
+  console.log(answer);
+  const mark =0;
+  for(i=0;i<answer.length;i++){
+    if(answer[i].iscorrect){
+      mark=mark+1;
+    }
+  }
+  console.log(mark)
+  const filter = { email: t.email };
+  const update = { marks: mark };
+  /*let doc = await Candidate.findOneAndUpdate(filter, update, {
+    new: true
+  });
+  }
+//  var s = Question.find({choices.option: })
+);
+
+*/
+app.post('/result',async (req,res)=>{
+  try{
+    var t= req.body;
+    console.log(t.answer);
+    const answer = t.answer;
+    console.log(t.email);
+    const mark=0
+    for(var i=0;i<answer.length;i++){
+      if(answer[i].iscorrect){
+        mark = mark +1
+      }
+    }
+      console.log(answer[i].iscorrect)
+  }.then().catch() /*
+  const filter = { email: t.email };
+  const update = { marks: mark };
+  let doc = await Candidate.findOneAndUpdate(filter, update, {
+    new: true
+  });
+  await doc.save();*/
+}
+);
 
 app.listen(8081);

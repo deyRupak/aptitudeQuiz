@@ -4,10 +4,6 @@ const Question = require('../models/test');
 const Candidate = require('../models/candidate');
 const bodyParser = require('body-parser');
 
-
-
-router.post('/',async (req,res)=>{
-  console.log(req.body.as)
-});
+console.log("rupak");
 
 module.exports =router ;

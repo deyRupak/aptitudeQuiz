@@ -11,6 +11,11 @@ const TestSchema = mongoose.Schema({
     type:String,
     require:false
   },
+  /*option1: String,
+  option2: String,
+  option3: String,
+  option4: String,
+  correctAns: String*/
   choices : {
       type:  [new mongoose.Schema({
         option: String,
