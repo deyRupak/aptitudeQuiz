@@ -14,7 +14,7 @@ const TestSchema = mongoose.Schema({
   choices : {
       type:  [new mongoose.Schema({
         option: String,
-        iscorrect: Boolean, default : false
+        iscorrect: Boolean
       })]
     }
 

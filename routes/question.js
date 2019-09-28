@@ -19,13 +19,13 @@ router.post('/',upload.single('quesionImage'),async (req,res)=>{
       question : req.body.question,
       img : req.file.path ,
       choices : [
-        { option : req.body.option1},
-        { option : req.body.option2},
-        { option : req.body.option3},
-        { option : req.body.option4}
+        { option : req.body.option1 , iscorrect:false},
+        { option : req.body.option2, iscorrect: false},
+        { option : req.body.option3, iscorrect: false},
+        { option : req.body.option4, iscorrect: false}
       ]
     });
-    new_question = await newQuestion.save();
+    new_question = await newQuestion.save().then(res.json({message: "Sucessful"}));
   }catch(err){
     console.log(err)
   }
