@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import ExamHall from '@/components/ExamHall'
 import instruction from '@/components/instruction'
+import admin from '@/components/admin'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/',
       name: 'instruction',
       component: instruction
+    },
+    {
+      path: '/efsdkjfsjdfkjsdkjfhfmnnjdnklsdmn',
+      name: 'admin',
+      component: admin
     }
   ]
 })

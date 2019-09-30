@@ -56,7 +56,7 @@ export default {
         number: this.number
       }
       console.log(formData)
-      axios.post('http://localhost:8081/', formData).then((response) => {
+      axios.post('http://192.168.43.167:8081/', formData).then((response) => {
         console.log(response.message)
 
         this.$router.push('/exam/' + this.email)
