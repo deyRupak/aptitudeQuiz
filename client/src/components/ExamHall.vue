@@ -31,8 +31,10 @@
         </div>
       </div>
     </div>
+    <router-link to='/Thank'>
     <button
         class="btn btn-primary" type="submit" @click="onSubmit" style="margin-left:85%;">Submit</button>
+  </router-link>
   </div>
 </template>
 
@@ -42,7 +44,7 @@ export default {
   name: 'ExamHall',
   data () {
     return {
-      url: 'http://192.168.43.167:8081/',
+      url: 'http://localhost:8081/',
       array: null,
       current: 0,
       image: null,
@@ -51,7 +53,7 @@ export default {
     }
   },
   async mounted () {
-    axios.get('http://192.168.43.167:8081/question').then(res => (this.array = res.data)
+    axios.get('http://localhost:8081/question').then(res => (this.array = res.data)
     ).catch(error => console.log(error))
   },
   methods: {
@@ -63,7 +65,7 @@ export default {
         answer: this.answer,
         email: this.email
       }
-      axios.post('http://192.168.43.167:8081/result/', formAnswer).then().catch(err => console.log(err))
+      axios.post('http://localhost:8081/result/', formAnswer).then().catch(err => console.log(err))
     }
   }
 }

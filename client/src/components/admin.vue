@@ -84,7 +84,7 @@ export default {
   name: 'ExamHall',
   data () {
     return {
-      url: 'http://192.168.43.167:8081/',
+      url: 'http://localhost:8081/',
       array: null,
       current: 0,
       image: null,
@@ -104,7 +104,7 @@ export default {
   },
   async mounted () {
     console.log('here')
-    axios.get('http://192.168.43.167:8081/question').then(res => (this.array = res.data)
+    axios.get('http://localhost:8081/question').then(res => (this.array = res.data)
     ).catch(error => console.log(error))
   },
   methods: {
@@ -120,7 +120,7 @@ export default {
     },
     delques: function (a) {
       console.log(a)
-      axios.delete('http://192.168.43.167:8081/question/' + a).then().catch(err => console.log(err))
+      axios.delete('http://localhost:8081/question/' + a).then().catch(err => console.log(err))
     },
     submitFile: function () {
       let formData = new FormData()
@@ -135,12 +135,11 @@ export default {
       formData.append('iscorrect4', this.iscorrect4)
       console.log('here')
       formData.append('quesionImage', this.file)
-      axios.post('http://192.168.43.167:8081/question', formData, {headers: {'Content-Type': 'multipart/form-data'}}).then().catch(err => console.log(err))
+      axios.post('http://localhost:8081/question', formData, {headers: {'Content-Type': 'multipart/form-data'}}).then().catch(err => console.log(err))
     }
   }
 }
 </script>
-
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -151,7 +150,6 @@ export default {
   margin-top: 60px;
   @import'~bootstrap/dist/css/bootstrap.css'
 }
-
 #ExamHall{
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }

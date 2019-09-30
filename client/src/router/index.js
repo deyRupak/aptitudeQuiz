@@ -4,6 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import ExamHall from '@/components/ExamHall'
 import instruction from '@/components/instruction'
 import admin from '@/components/admin'
+import Thank from '@/components/Thank'
+
 
 Vue.use(Router)
 
@@ -29,6 +31,11 @@ export default new Router({
       path: '/efsdkjfsjdfkjsdkjfhfmnnjdnklsdmn',
       name: 'admin',
       component: admin
-    }
+    },
+    {
+      path: '/Thank',
+      name: 'Thank',
+      component: Thank
+    },
   ]
 })
