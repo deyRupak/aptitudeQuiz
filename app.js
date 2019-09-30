@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const startRoute=require('./routes/start');
 const questRoute=require('./routes/question');
 const adminRoute=require('./routes/admin');
+const resultRoute=require('./routes/result');
 //const resultRoute=require('./routes/result');
 //Middlewere
 app.use(cors());
@@ -21,7 +22,7 @@ app.use(bodyParser.json());
 app.use('/question',questRoute);
 app.use('/admin',adminRoute);
 app.use('/uploads', express.static('uploads'));
-
+app.use('/candidates',resultRoute);
 
 
 //DataBase Connection

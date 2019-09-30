@@ -11,9 +11,7 @@
     </router-link>
     <br><br><br><br><br>
     </div>
-
          <div class="col-sm-3"></div>
-         
           </div>
     </div>
 </template>

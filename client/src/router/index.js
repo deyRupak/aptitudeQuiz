@@ -5,7 +5,7 @@ import ExamHall from '@/components/ExamHall'
 import instruction from '@/components/instruction'
 import admin from '@/components/admin'
 import Thank from '@/components/Thank'
-
+import result from '@/components/result'
 
 Vue.use(Router)
 
@@ -37,5 +37,10 @@ export default new Router({
       name: 'Thank',
       component: Thank
     },
+    {
+      path: '/theresult',
+      name: 'result',
+      component: result
+    }
   ]
 })
