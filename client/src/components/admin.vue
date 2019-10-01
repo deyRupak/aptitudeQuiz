@@ -8,7 +8,6 @@
       <div class="col-sm-8">
 
       <div v-if="!addquestion">
-      <button class="btn btn-primary" type="submit" @click="toggel">Add Question</button>
         <ul>
           <div v-for="(i,index) in array" v-bind:key="index" v-if="current==index">
             <img v-bind:src="url+i.img" height=300px v-if="i.img">
@@ -22,6 +21,7 @@
                   </div>
                 </ol>
                 <br>
+                <button class="btn btn-primary" type="submit" @click="toggel">Add Question</button>
                 <button v-on:click="delques(i._id)" class="btn btn-danger">Delete Question</button>
           </div>
         </ul>
@@ -57,7 +57,7 @@
           <label>File
             <input type="file" id="file" ref="file" v-on:change="handleFileUpload()"/>
           </label>
-            <button >Submit</button>
+            <button class="btn btn-primary">Submit</button>
           <br>
         </div>
       </div>
@@ -107,6 +107,13 @@ export default {
     axios.get('http://localhost:8081/question').then(res => (this.array = res.data)
     ).catch(error => console.log(error))
   },
+  // computed: {
+  //   async mounted () {
+  //   console.log('here')
+  //   axios.get('http://localhost:8081/question').then(res => (this.array = res.data)
+  //   ).catch(error => console.log(error))
+  //   }
+  // },
   methods: {
     getcurrent: function (a) {
       this.addquestion = false
@@ -135,7 +142,8 @@ export default {
       formData.append('iscorrect4', this.iscorrect4)
       console.log('here')
       formData.append('quesionImage', this.file)
-      axios.post('http://localhost:8081/question', formData, {headers: {'Content-Type': 'multipart/form-data'}}).then().catch(err => console.log(err))
+      axios.post('http://localhost:8081/question', formData, 
+        {headers: {'Content-Type': 'multipart/form-data'}}).then().catch(err => console.log(err))
     }
   }
 }

@@ -5,9 +5,10 @@
       <div class="col-sm-8">
         <ul>
           <div v-for="(i,index) in array" v-bind:key="index" v-if="current==index">
+            <div class="demos"></div>
             <img v-bind:src="url+i.img" height=300px v-if="i.img">
-              <h6>Question no:{{index+1}}</h6>
-                 <h2>{{i.question}} </h2>
+              <h6>Question No:{{index+1}}</h6>
+                 <p>{{i.question}} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
                  <ol>
                   <div v-for="(j,indx) in i.choices" v-bind:key="indx">
                     <li type="A">
@@ -16,7 +17,7 @@
                   </div>
                 </ol>
                 <br>
-                <button v-on:click="current--" v-if="current!=0" class="btn btn-secondary">Prev</button>
+                <button v-on:click="current--" v-if="current!=0" class="btn btn-secondary">Previous</button>
                 <button v-on:click="current++" v-if="current!=array.length-1" class="btn btn-success">Save and Next</button>
           </div>
         </ul>
@@ -33,7 +34,7 @@
     </div>
     <router-link to='/Thank'>
     <button
-        class="btn btn-primary" type="submit" @click="onSubmit" style="margin-left:85%;">Submit</button>
+        class="btn btn-primary" type="submit" @click="onSubmit" style="margin-left:85%;">SUBMIT</button>
   </router-link>
   </div>
 </template>
@@ -69,6 +70,31 @@ export default {
     }
   }
 }
+
+
+// timer
+  // var now = new Date().getTime();
+  //       var countDownDate = now + 1802000
+  //       var x = setInterval(function () {
+  //           var now = new Date().getTime();
+  //           var distance = countDownDate - now;
+
+  //           // Time calculations for days, hours, minutes and seconds
+  //           var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  //           var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  //           var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  //           var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  //           // Output the result in an element with id="demo"
+  //           document.getElementById("demos").innerHTML = days + "d " + hours + "h " +
+  //               minutes + "m " + seconds + "s ";
+  //           if (distance < 0) {
+  //               clearInterval(x);
+  //               document.getElementById("demos").innerHTML = "EXPIRED";
+  //           }
+
+  //       }, 1000)
+
 </script>
 
 <style>

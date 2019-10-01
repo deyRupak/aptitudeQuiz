@@ -2,15 +2,15 @@
 <div style="margin-left:10%;">
     <div class="row"><br>
     <div class="col-sm-6">
-       <h1>result !</h1>
+       <h1>RESULTS !</h1><br><br>
     <table class="table">
       <thead>
         <tr>
           <th scope="col">Sr no</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Number</th>
-          <th scope="col">Marks</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Contact No.</th>
+          <th scope="col">Marks Acheived</th>
         </tr>
       </thead>
       <tbody>

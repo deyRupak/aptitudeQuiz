@@ -95,7 +95,11 @@ app.post('/result',async (req,res)=>{
     let mark = 0;
     console.log(email,answer);
     for(var i=0;i<answer.length;i++){
-      mark = mark + 1;
+      try{
+        if(answer[i].iscorrect)
+        mark = mark + 1;
+      }
+      catch(err){}
     }
     const current_candidate = await Candidate.findOne({email: email})
     console.log(current_candidate)
