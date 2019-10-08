@@ -4,7 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import 'bootstrap'
+import CircularCountDownTimer from 'vue-circular-count-down-timer'
 
+Vue.use(CircularCountDownTimer)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

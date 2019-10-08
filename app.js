@@ -94,17 +94,20 @@ app.post('/result',async (req,res)=>{
     let answer=req.body.answer;
     let mark = 0;
     console.log(email,answer);
-    for(var i=0;i<answer.length;i++){
-      try{
-        if(answer[i].iscorrect)
-        mark = mark + 1;
-      }
-      catch(err){}
+    try{
+      for(var i=0;i<answer.length;i++){
+
+         if(answer[i].iscorrect)
+         mark = mark + 1;
+      
     }
+  }catch(err){}
     const current_candidate = await Candidate.findOne({email: email})
     console.log(current_candidate)
-    current_candidate.marks = mark
-    await current_candidate.save()
+    if(current_candidate!=null){
+      current_candidate.marks = mark
+      await current_candidate.save()
+    }
   }catch(err){ console.log(err)}
 }
 );

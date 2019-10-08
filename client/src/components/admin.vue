@@ -142,8 +142,7 @@ export default {
       formData.append('iscorrect4', this.iscorrect4)
       console.log('here')
       formData.append('quesionImage', this.file)
-      axios.post('http://localhost:8081/question', formData, 
-        {headers: {'Content-Type': 'multipart/form-data'}}).then().catch(err => console.log(err))
+      axios.post('http://localhost:8081/question', formData, {headers: {'Content-Type': 'multipart/form-data'}}).then().catch(err => console.log(err))
     }
   }
 }
