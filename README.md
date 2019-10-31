@@ -3,13 +3,4 @@
 ## Technologies
 
 
--MongoDB
-
-
--Express
-
-
--Vue
-
-
--Node
+MongoDB / Express / Vue / Node
